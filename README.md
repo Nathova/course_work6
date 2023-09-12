@@ -1,7 +1,19 @@
-Mailing-List-service
-Service for creating and managing mailing lists. Includes 3 apps:
+Сервис управления рассылками
+Сервис для сервис управления рассылками, администрирования и получения статистики. Включает 3 приложения:
 
-mailing_list with models Client, MailingListMessage, MailingListLogs;
-users with model User;
-vlog with model Record. CRUD realized for each model. In mailing_list.services add code for sending emails to Users clients. In users.services add code for sending email when new user registers or want to change password. Email send to users email specified at registration. Front part of the project located in templates paths.
-With this service authorised User can create and manage his own mailing lists for his clients, also User can create records and manage them. User can see another mailing lists, created by another users but can't manage or delete them.
+mailing_list с моделями Client, MailingListMessage, MailingListLogs;
+пользователи с моделью User;
+влог с моделью Рекорд. CRUD реализован для каждой модели. 
+Лицевая часть проекта расположена в путях шаблонов.
+
+Для запуска проекта нужно убедиться, что на вашем устройстве установлен Python3.x, установить виртуальное окружение (Poetry); PostgreSQL Django,
+Redis, django-crontab, все необходимые пакеты, а также загрузить данные менеджера.
+Запустить миграции. Запустить файл manage.py.
+В mailing_list.services добавить код для отправки электронных писем клиентам менеджера.
+В user.services добавить код для отправки электронной почты, когда новый менеджер регистрируется или хочет сменить пароль. 
+Или же добавить пользователя в группу Crone. 
+Рассылка отправляется на адрес электронной почты пользователя, указанный при регистрации в заданной периодичности.
+
+С помощью этой услуги авторизованный пользователь(менеджер) может создавать и управлять своими собственными списками рассылки для своих клиентов,
+а также пользователь может создавать записи и управлять ими.
+Менеджер может видеть другие списки рассылки, созданные другими пользователями, но не может управлять ими или удалять их.
